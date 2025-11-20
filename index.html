@@ -1,80 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MindEase: Mental wellness</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>MindEase: A Student Mental Wellness Hub</h1>
+  </header>
 
-    <!-- WELCOME PAGE -->
-     <div class = "container">
-        <h1><b> Welcome </b></h1>
-        <h2> to the <i> MindEase: A Student Mental Wellness Hub </i></h2>
-        <button oncllick="showPage('verifyPage')"></button>
-     
-</div>
-</div>
+  <div class="container">
+    <aside class="sidebar">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="home.html">Information</a>
+        <a href="dashboard.html">Guide</a>
+      </nav>
 
-<!-- VERIFY PAGE -->
- <div id="verifyPage" class="screen">
- <div class="container">
-    <h2><i>How's your feeling today?</i>i></h2><h2>
-    <input type="text" id="inputID" placeholder="Write your thoughts">
-    <br>
-    <button onclick=>submit</button>
-    </div id="result" style="margin-top: 15px: font-weight: bold:"></div>
-    </div>
-    </div>
-<style>
-    body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #8ee3ff;
-  margin: 0;
-  padding: 0;
+      <div class="profile">
+        <img src="https://img.freepik.com/free-psd/3d-medical-elements-with-heartbeat_23-2151202567.jpg?semt=ais_hybrid&w=740&q=80" alt="Profile Picture">
+      </div>
+    </aside>
+
+    <style>
+    .profile img {
+     width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
-.container {
-  background-color: #e9faff;
-  width: 85%;
-  max-width: 350px;
-  margin: 60px auto;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 2px 2px 6px #555;
-}
+    </style>
 
-h1, h2 {
-  color: #000;
-}
 
-button {
-  background-color: white;
-  border: 2px solid #000;
-  padding: 10px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 15px;
-}
-.message {
-  color: #007bff;
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-button:hover {
-  background-color: #dffaff;
-
-.screen {
-  display: none;
-}
-
-.active {
-  display: block;
-}
-}
-</style>
+  <script src="style.css"></script>
 </body>
 </html>
