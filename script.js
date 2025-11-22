@@ -5,4 +5,22 @@ function showPage(pageId) {
 
     // Show selected page
     document.getElementById(pageId).classList.remove('hidden');
+
+    // Load saved thought when opening the page
+    loadThought();
+}
+
+// Load thought from localStorage
+function loadThought() {
+    const saved = localStorage.getItem("userThought");
+    if (saved) {
+        document.getElementById("thoughtInput").value = saved;
+    }
+}
+
+// Save thought to localStorage
+function saveThought() {
+    const text = document.getElementById("thoughtInput").value;
+    localStorage.setItem("userThought", text);
+    alert("Your thought has been saved!");
 }
