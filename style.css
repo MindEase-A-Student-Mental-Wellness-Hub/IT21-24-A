@@ -1,49 +1,41 @@
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f2ececef;
-  color: #232121;
-  text-align: center;
-  margin: 100px;
-  padding: 20px;
-
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #c5f2c7;
+    margin: 0;
+    padding: 0;
 }
 
-header {
-  background-color: #95dee4;
-  color: rgb(32, 31, 31);
-  padding: 20px 0;
+.page {
+    padding: 30px;
 }
 
-nav a {
-  color: rgb(32, 31, 32);
-  text-decoration: underline;
-  margin: 0 10px;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-section {
-  margin: 10px auto;
-  width: 50%;
-  padding: 15px;
-  background-color: #bcb4b4;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.hidden {
+    display: none;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #161717;
-  color: rgb(39, 37, 37);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    background: #4caf50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 button:hover {
-  background-color: #454747;
+    background: #45a049;
+}
+
+textarea {
+    width: 80%;
+    height: 120px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.emojis {
+    font-size: 40px;
 }

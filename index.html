@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindEase</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindEase</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>MindEase: A Student Mental Wellness Hub</h1>
-  </header>
 
-  <div class="container">
-    <aside class="sidebar">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="home.html">Information</a>
-        <a href="dashboard.html">Guide</a>
-      </nav>
+    <!-- Welcome Screen -->
+    <div id="welcome" class="page">
+        <h1>Welcome to MindEase</h1>
+        <button onclick="showPage('mainMenu')">Proceed</button>
+    </div>
 
-      <div class="profile">
-        <img src="https://img.freepik.com/free-psd/3d-medical-elements-with-heartbeat_23-2151202567.jpg?semt=ais_hybrid&w=740&q=80" alt="Profile Picture">
-      </div>
-    </aside>
+    <!-- Main Menu -->
+    <div id="mainMenu" class="page hidden">
+        <h2>MindEase Dashboard</h2>
+        <button onclick="showPage('moodPage')">Mood</button>
+        <button onclick="showPage('thoughtsPage')">Thoughts</button>
+        <button onclick="showPage('quotesPage')">Quotes</button>
+        <button onclick="showPage('reminderPage')">Reminder</button>
+    </div>
 
-    <style>
-    .profile img {
-     width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
+    <!-- Mood Dashboard -->
+    <div id="moodPage" class="page hidden">
+        <h2>Your Mood Today</h2>
+        <div class="emojis">
+            😊 😢 😡 🤒 😨 😴
+        </div>
+        <br>
+        <button onclick="showPage('mainMenu')">Back</button>
+    </div>
 
-    </style>
+    <!-- Thoughts Dashboard -->
+    <div id="thoughtsPage" class="page hidden">
+        <h2>Write Your Thoughts</h2>
+        <textarea placeholder="Write anything you feel…"></textarea>
+        <br><br>
+        <button onclick="showPage('mainMenu')">Back</button>
+    </div>
 
+    <!-- Quotes Dashboard -->
+    <div id="quotesPage" class="page hidden">
+        <h2>Motivational Quotes</h2>
+        <ul>
+            <li>"Your only limit is your mind."</li>
+            <li>"Believe you can and you're halfway there."</li>
+            <li>"It always seems impossible until it's done."</li>
+        </ul>
+        <button onclick="showPage('mainMenu')">Back</button>
+    </div>
 
-  <script src="style.css"></script>
+    <!-- Reminder Dashboard -->
+    <div id="reminderPage" class="page hidden">
+        <h2>Reminder</h2>
+        <ul>
+            <li>Talk with your friend</li>
+            <li>Seek help when needed</li>
+            <li>Just keep going</li>
+        </ul>
+        <button onclick="showPage('mainMenu')">Back</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
