@@ -4,13 +4,9 @@ function showPage(pageId) {
     pages.forEach(p => p.classList.add('hidden'));
 
     // Show selected page
-    document.getElementById(pageId).classList.remove('hidden');
+    document.getElementById(pageId).classList.remove('hidden'); 
 
-    // Load saved thought when opening the page
-    loadThought();
-}
-
-// Load thought from localStorage
+    // Load thought from localStorage
 function loadThought() {
     const saved = localStorage.getItem("userThought");
     if (saved) {
@@ -28,5 +24,32 @@ function loadThought() {
 function saveThought() {
     const text = document.getElementById("thoughtInput").value;
     localStorage.setItem("userThought", text);
-    alert("Your thoughts has been saved!");
+    alert("Your thought has been saved!");
+}
+
+
+    // Load saved thought when opening the page
+    loadThought();
+}
+// Function to switch pages
+function showPage(pageId) {
+    const pages = document.querySelectorAll(".page");
+    pages.forEach(page => page.classList.add("hidden"));
+
+    document.getElementById(pageId).classList.remove("hidden");
+}
+
+// Function for the "okay" button
+function okay() {
+    const userThought = document.getElementById("thoughtInput").value;
+
+    if (userThought.trim() === "") {
+        alert("Please write something first.");
+        return;
+    }
+
+    alert("Your message has been saved:\n\n" + userThought);
+
+    // Optional: Clear input after saving
+    document.getElementById("thoughtInput").value = "";
 }
