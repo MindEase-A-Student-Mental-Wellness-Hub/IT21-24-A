@@ -22,5 +22,14 @@ function loadThought() {
 function saveThought() {
     const text = document.getElementById("thoughtInput").value;
     localStorage.setItem("userThought", text);
-    alert("Your thought has been saved!");
+    alert("Your thoughts has been saved!");
 }
+
+document.querySelectorAll('.mood').forEach(mood => {
+    mood.addEventListener('click', () => {
+        document.getElementById('selectedMood').textContent =
+           "You selected: " + mood.textContent
+    });
+}); 
+
+
