@@ -76,6 +76,12 @@ textarea {
 .hidden {
     display: none;
 }
+/* Summary Page Title */
+#SummaryPage h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
 
 
 
