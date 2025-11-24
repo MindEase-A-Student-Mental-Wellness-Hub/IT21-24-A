@@ -16,6 +16,12 @@ function loadThought() {
     if (saved) {
         document.getElementById("thoughtInput").value = saved;
     }
+    document.querySelectorAll('.mood').forEach(mood => {
+    mood.addEventListener('click', () => {
+        document.getElementById('selectedMood').textContent =
+            "You selected: " + mood.textContent;
+    });
+});
 }
 
 // Save thought to localStorage
