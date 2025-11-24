@@ -77,53 +77,5 @@ textarea {
     display: none;
 }
 
-/* Summary Page Title */
-#SummaryPage h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-/* Textarea Styling */
-#thoughtInput {
-    width: 90%;
-    max-width: 500px;
-    height: 120px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    resize: none;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Buttons */
-#SummaryPage button {
-    padding: 10px 20px;
-    margin: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* OK button */
-#SummaryPage button:first-of-type {
-    background-color: #4caf50;
-    color: white;
-}
-
-/* Back button */
-#SummaryPage button:last-of-type {
-    background-color: #d9534f;
-    color: white;
-}
-
-/* Hover effects */
-#SummaryPage button:hover {
-    opacity: 0.9;
-}
-
 
 
