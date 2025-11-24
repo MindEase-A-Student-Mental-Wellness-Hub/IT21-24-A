@@ -31,13 +31,6 @@ function saveThought() {
     // Load saved thought when opening the page
     loadThought();
 }
-// Function to switch pages
-function showPage(pageId) {
-    const pages = document.querySelectorAll(".page");
-    pages.forEach(page => page.classList.add("hidden"));
-
-    document.getElementById(pageId).classList.remove("hidden");
-}
 
 // Function for the "okay" button
 function okay() {
