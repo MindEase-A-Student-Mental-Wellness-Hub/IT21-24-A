@@ -115,4 +115,8 @@ textarea {
     background-color: #d9534f;
     color: white;
 }
+/* Hover effects */
+#SummaryPage button:hover {
+    opacity: 0.9;
+}
 
