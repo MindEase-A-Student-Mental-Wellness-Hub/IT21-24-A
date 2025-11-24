@@ -22,5 +22,5 @@ function loadThought() {
 function saveThought() {
     const text = document.getElementById("thoughtInput").value;
     localStorage.setItem("userThought", text);
-    alert("Your thought has been saved!");
+    alert("Your thoughts has been saved!");
 }
