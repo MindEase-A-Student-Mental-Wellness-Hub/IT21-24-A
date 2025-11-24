@@ -104,4 +104,15 @@ textarea {
     border-radius: 8px;
     cursor: pointer;
 }
+/* OK button */
+#SummaryPage button:first-of-type {
+    background-color: #4caf50;
+    color: white;
+}
+
+/* Back button */
+#SummaryPage button:last-of-type {
+    background-color: #d9534f;
+    color: white;
+}
 
