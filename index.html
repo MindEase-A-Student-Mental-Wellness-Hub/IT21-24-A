@@ -21,38 +21,38 @@
         <button onclick="showPage('thoughtsPage')">Thoughts</button>
         <button onclick="showPage('quotesPage')">Quotes</button>
         <button onclick="showPage('reminderPage')">Reminder</button>
+        <button onclick="showPage('summaryPage')">Summary</button>
     </div>
 
     <!-- Mood Dashboard -->
-<div id="moodPage" class="page hidden">
-    <h2>Your Mood Today</h2>
+    <div id="moodPage" class="page hidden">
+        <h2>Your Mood Today</h2>
 
-    <div class="emojis" id="moodOptions">
-        <span class="mood">😊</span>
-        <span class="mood">😢</span>
-        <span class="mood">😡</span>
-        <span class="mood">🤒</span>
-        <span class="mood">😨</span>
-        <span class="mood">😴</span>
+        <div class="emojis" id="moodOptions">
+            <span class="mood" data-mood="Happy">😊</span>
+            <span class="mood" data-mood="Sad">😢</span>
+            <span class="mood" data-mood="Angry">😡</span>
+            <span class="mood" data-mood="Sick">🤒</span>
+            <span class="mood" data-mood="Scared">😨</span>
+            <span class="mood" data-mood="Tired">😴</span>
+        </div>
+
+        <p id="selectedMood" style="margin-top: 10px; font-size: 18px;"></p>
+
+        <br>
+        <button onclick="showPage('mainMenu')">Back</button>
     </div>
 
-    <p id="selectedMood" style="margin-top: 10px; font-size: 18px;"></p>
+    <!-- Thoughts Dashboard -->
+    <div id="thoughtsPage" class="page hidden">
+        <h2>Write Your Thoughts</h2>
 
-    <br>
-    <button onclick="showPage('mainMenu')">Back</button>
-</div>
+        <textarea id="thoughtText" placeholder="Write anything you feel…"></textarea>
+        <br><br>
 
-   <!-- Thoughts Dashboard -->
-<div id="thoughtsPage" class="page hidden">
-    <h2>Write Your Thoughts</h2>
-
-    <textarea id="thoughtInput" placeholder="Write anything you feel…"></textarea>
-    <br><br>
-
-    <button onclick="saveThought()">Save</button>
-    <button onclick="showPage('mainMenu')">Back</button>
-</div>
-
+        <button onclick="saveThought()">Save</button>
+        <button onclick="showPage('mainMenu')">Back</button>
+    </div>
 
     <!-- Quotes Dashboard -->
     <div id="quotesPage" class="page hidden">
@@ -65,35 +65,31 @@
         <button onclick="showPage('mainMenu')">Back</button>
     </div>
 
-  <!-- Reminder Dashboard -->
-<div id="reminderPage" class="page hidden">
-    <h2>Reminders</h2>
+    <!-- Reminder Dashboard -->
+    <div id="reminderPage" class="page hidden">
+        <h2>Reminders</h2>
 
-    <ul class="reminder-list">
-        <h1>1. Talk with your friend</h1>
-        <h2>• Seek help when needed</h2>
-        <h3>• Keep going, no matter what</h3>
-        <h4>• Stay positive in every situation</h4>
-        <h5>• Surround yourself with people who uplift you</h5>
-    </ul>
+        <ul class="reminder-list">
+            <h1>1. Talk with your friend</h1>
+            <h2>• Seek help when needed</h2>
+            <h3>• Keep going, no matter what</h3>
+            <h4>• Stay positive in every situation</h4>
+            <h5>• Surround yourself with people who uplift you</h5>
+        </ul>
 
-    <button onclick="showPage('mainMenu')" class="btn-back">Back</button>
-</div>
+        <button onclick="showPage('mainMenu')" class="btn-back">Back</button>
+    </div>
+
+    <!-- Summary Dashboard -->
+    <div id="summaryPage" class="page hidden">
+        <h2>Your Mood Summary</h2>
+
+        <div id="chart"></div>
+
+        <button onclick="showPage('mainMenu')">Back</button>
+    </div>
 
     <script src="script.js"></script>
 
-
- <!-- Summary Dashboard -->
-<div id="SummaryPage" class="page hidden">
-    <h2>this is your current mood</h2>
-
-    <textarea id="thoughtInput" placeholder="Write anything you feel…"></textarea>
-    <br><br>
-
-    <button onclick="okay()">okay</button>
-    <button onclick="showPage('mainMenu')">Back</button>
-</div>
-
 </body>
-
 </html>

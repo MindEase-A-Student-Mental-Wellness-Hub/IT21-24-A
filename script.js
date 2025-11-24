@@ -1,55 +1,107 @@
 function showPage(pageId) {
-    // Hide all pages
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(p => p.classList.add('hidden'));
-
-    // Show selected page
-    document.getElementById(pageId).classList.remove('hidden'); 
-
-    // Load thought from localStorage
-function loadThought() {
-    const saved = localStorage.getItem("userThought");
-    if (saved) {
-        document.getElementById("thoughtInput").value = saved;
-    }
-    document.querySelectorAll('.mood').forEach(mood => {
-    mood.addEventListener('click', () => {
-        document.getElementById('selectedMood').textContent =
-            "You selected: " + mood.textContent;
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.add("hidden");
     });
-});
-}
-
-// Save thought to localStorage
-function saveThought() {
-    const text = document.getElementById("thoughtInput").value;
-    localStorage.setItem("userThought", text);
-    alert("Your thought has been saved!");
-}
-
-
-    // Load saved thought when opening the page
-    loadThought();
-}
-// Function to switch pages
-function showPage(pageId) {
-    const pages = document.querySelectorAll(".page");
-    pages.forEach(page => page.classList.add("hidden"));
-
     document.getElementById(pageId).classList.remove("hidden");
 }
 
-// Function for the "okay" button
-function okay() {
-    const userThought = document.getElementById("thoughtInput").value;
+// ---------------------
+// Mood Selection
+// ---------------------
+let moodHistory = JSON.parse(localStorage.getItem("moodHistory")) || {};
 
-    if (userThought.trim() === "") {
+document.querySelectorAll(".mood").forEach(mood => {
+    mood.addEventListener("click", function () {
+        const selected = this.getAttribute("data-mood");
+        document.getElementById("selectedMood").textContent = "Mood: " + selected;
+
+        // Save mood count
+        moodHistory[selected] = (moodHistory[selected] || 0) + 1;
+        localStorage.setItem("moodHistory", JSON.stringify(moodHistory));
+
+        alert("Mood saved!");
+    });
+});
+
+// ---------------------
+// Save Thoughts
+// ---------------------
+function saveThought() {
+    const text = document.getElementById("thoughtText").value;
+
+    if (text.trim() === "") {
         alert("Please write something first.");
         return;
     }
 
-    alert("Your message has been saved:\n\n" + userThought);
-
-    // Optional: Clear input after saving
-    document.getElementById("thoughtInput").value = "";
+    localStorage.setItem("thoughts", text);
+    alert("Thought saved!");
 }
+
+// ---------------------
+// Generate Chart (Simple Bar Chart)
+// ---------------------
+function generateChart() {
+    const chart = document.getElementById("chart");
+    chart.innerHTML = ""; // Clear previous
+
+    const moods = Object.keys(moodHistory);
+
+    if (moods.length === 0) {
+        chart.innerHTML = "<p>No mood data yet.</p>";
+        return;
+    }
+
+    moods.forEach(mood => {
+        const bar = document.createElement("div");
+        bar.className = "bar";
+
+        const count = moodHistory[mood];
+
+        bar.innerHTML = `
+            <span class="label">${mood}</span>
+            <div class="bar-fill" style="width:${count * 20}px"></div>
+            <span class="count">${count}</span>
+        `;
+
+        chart.appendChild(bar);
+    });
+}
+
+document.getElementById("summaryPage").addEventListener("click", generateChart);
+
+// ---------------------
+// Generate Chart (Simple Bar Chart)
+// ---------------------
+function generateChart() {
+    const chart = document.getElementById("chart");
+    chart.innerHTML = ""; // Clear previous chart content
+
+    const moodHistory = JSON.parse(localStorage.getItem("moodHistory")) || {};
+
+    const moods = Object.keys(moodHistory);
+
+    if (moods.length === 0) {
+        chart.innerHTML = "<p>No mood data yet.</p>";
+        return;
+    }
+
+    moods.forEach(mood => {
+        const bar = document.createElement("div");
+        bar.className = "bar";
+
+        const count = moodHistory[mood];
+
+        bar.innerHTML = `
+            <span class="label">${mood}</span>
+            <div class="bar-fill" style="width:${count * 35}px"></div>
+            <span class="count">${count}</span>
+        `;
+
+        chart.appendChild(bar);
+    });
+}
+
+// Generate chart when Summary Page is opened
+document.getElementById("summaryPage").addEventListener("click", generateChart);
+
