@@ -76,25 +76,3 @@ textarea {
 .hidden {
     display: none;
 }
-/* Summary Page Title */
-#SummaryPage h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-/* Textarea Styling */
-#thoughtInput {
-    width: 90%;
-    max-width: 500px;
-    height: 120px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    resize: none;
-    display: block;
-    margin: 0 auto;
-}
-
-
-
