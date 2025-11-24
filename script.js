@@ -1,3 +1,8 @@
+function showPage(pageId) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(p => p.classList.add('hidden'));
+
 // Function to switch pages
 function showPage(pageId) {
     const pages = document.querySelectorAll(".page");
@@ -19,4 +24,5 @@ function okay() {
 
     // Optional: Clear input after saving
     document.getElementById("thoughtInput").value = "";
+}
 }
