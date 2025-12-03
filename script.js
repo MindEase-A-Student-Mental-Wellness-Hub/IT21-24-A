@@ -5,9 +5,9 @@ function showPage(pageId) {
     document.getElementById(pageId).classList.remove("hidden");
 }
 
-// ---------------------
-// Mood Selection
-// ---------------------
+
+//Mood Selection
+
 let moodHistory = JSON.parse(localStorage.getItem("moodHistory")) || {};
 
 document.querySelectorAll(".mood").forEach(mood => {
@@ -15,7 +15,7 @@ document.querySelectorAll(".mood").forEach(mood => {
         const selected = this.getAttribute("data-mood");
         document.getElementById("selectedMood").textContent = "Mood: " + selected;
 
-        // Save mood count
+//Save mood count
         moodHistory[selected] = (moodHistory[selected] || 0) + 1;
         localStorage.setItem("moodHistory", JSON.stringify(moodHistory));
 
@@ -23,9 +23,9 @@ document.querySelectorAll(".mood").forEach(mood => {
     });
 });
 
-// ---------------------
-// Save Thoughts
-// ---------------------
+
+//Save Thoughts
+
 function saveThought() {
     const text = document.getElementById("thoughtText").value;
 
@@ -38,9 +38,9 @@ function saveThought() {
     alert("Thought saved!");
 }
 
-// ---------------------
-// Generate Chart (Simple Bar Chart)
-// ---------------------
+
+//Chart 
+
 function generateChart() {
     const chart = document.getElementById("chart");
     chart.innerHTML = ""; // Clear previous
@@ -70,9 +70,9 @@ function generateChart() {
 
 document.getElementById("summaryPage").addEventListener("click", generateChart);
 
-// ---------------------
-// Generate Chart (Simple Bar Chart)
-// ---------------------
+
+//Chart 
+
 function generateChart() {
     const chart = document.getElementById("chart");
     chart.innerHTML = ""; // Clear previous chart content
